@@ -14,15 +14,18 @@ def check_namnhuan(y):
         return False
 #hàm trả về số ngày trong tháng
 def check_ngay(m):
-    if m in (1,3,5,7,8,10,12):
-        return 31
-    elif m ==2 :
-        if(check_namnhuan()):
-            return 29
+    if (m >=1 and m <=12):
+        if m in (1,3,5,7,8,10,12):
+            return 31
+        elif m ==2 :
+            if(check_namnhuan()):
+                return 29
+            else:
+                return 28
         else:
-            return 28
+            return 30
     else:
-        return 30
+        return "error"
 def return_nextDay():
     d = int(input("nhap ngay:"))
     m = int(input("nhap thang:"))
